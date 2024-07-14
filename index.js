@@ -61,14 +61,4 @@ function createFilmByDirectorChildrenElement(){
     return document.createElement('ul');
 }
 
-for (let director in filmssByDirectors) {
-  directorsElement.appendChild(createDirectorElment(director));
-  let filmsByDirector = createFilmByDirectorElement(director);
-  let filmsByDirectorChildren = createFilmByDirectorChildrenElement();
-  for (let film of filmssByDirectors[director]) {
-    filmsAndDirectorsElement.appendChild(createFilmAndDirectorElement(director, film));
-    filmsByDirectorChildren.appendChild(createFilmByDirectorElement(film));
-    filmsByDirector.appendChild(filmsByDirectorChildren);
-  }
-  directorsfilmsListElement.appendChild(filmsByDirector);
-}
+
